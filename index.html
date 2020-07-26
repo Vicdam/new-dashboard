@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Title -->
+  <title>Publiaher's Dashboard</title>
+
+  <!-- Chart Js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+  <!-- font awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <aside class="sidebar position-fixed d-none d-lg-block h-100 position-relative">
+    <ul class="sidebar__lists list-unstyled">
+      <a class="my-4 sidebar__link sidebar__link-active" href="#">
+        <li class="pl-2 pl-xl-5 py-2 my-3 d-flex align-items-center sidebar__list sidebar__list-active"><span
+            class="sidebar__icon"><img class="img-fluid pr-3" src="./assets/images/Dashboard Icon.svg"
+              alt=""></span>Dashboard</li>
+      </a>
+      <a class="my-4 sidebar__link" href="#">
+        <li class="pl-2 pl-xl-5 py-2 my-3 d-flex align-items-center sidebar__list"><span class="sidebar__icon"><img
+              class="img-fluid pr-3" src="./assets/images/publisher list.svg" alt=""></span>Publisher List</li>
+      </a>
+      <a class="my-4 sidebar__link" href="#">
+        <li class="pl-2 pl-xl-5 py-2 my-3 d-flex align-items-center sidebar__list"><span class="sidebar__icon"><img
+              class="img-fluid pr-3" src="./assets/images/wallet.svg" alt=""></span>Wallet</li>
+      </a>
+      <a class="my-4 sidebar__link" href="#">
+        <li class="pl-2 pl-xl-5 py-2 my-3 d-flex align-items-center sidebar__list"><span class="sidebar__icon"><img
+              class="img-fluid pr-3" src="./assets/images/profile.svg" alt=""></span>Account</li>
+      </a>
+    </ul>
+    <a class="sidebar__link" href="#">
+      <li class="pl-2 pl-xl-5 py-2 my-3 d-flex align-items-center position-absolute sidebar__sign-out"><span
+          class="sidebar__icon"><img class="img-fluid pr-3" src="./assets/images/log-out.svg" alt=""></span>Sign
+        out</li>
+    </a>
+  </aside>
+
+  <main class="main-content">
+    <!-- Small screens -->
+    <header class="d-lg-none">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand pl-3 pl-sm-0" href="#"><img class="img-fluid" src="./assets/images/Webapp.svg"
+              alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="container">
+            <div class="row">
+              <ul class="navbar-nav ml-auto pl-3 pl-sm-0">
+                <li class="nav-item d-flex align-items-center">
+                  <img class="mr-2" src="./assets/images/dashboard icon mobile.svg" alt="dashboard icon mobile">
+                  <a class="nav-link" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                  <img class="mr-2" src="./assets/images/publisher list mobile.svg" alt="publisher list icon mobile">
+                  <a class="nav-link" href="#">Publisher list</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                  <img class="mr-2" src="./assets/images/wallet mobile.svg" alt="wallet icon mobile">
+                  <a class="nav-link" href="#">Wallet</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                  <img class="mr-2" src="./assets/images/account icon mobile.svg" alt="account icon mobile">
+                  <a class="nav-link" href="#">Account</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                  <img class="mr-2" src="./assets/images/sign-out mobile.svg" alt="sign out icon mobile">
+                  <a class="nav-link" href="#">Sign Out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container py-3">
+        <form class="header-form position-relative mx-auto">
+          <input class="header-form__input form-control px-3 py-2" type="text" placeholder="Search payment history">
+          <div class="header-form__icon position-absolute">
+            <img src="./assets/images/search icon.svg" alt="">
+          </div>
+        </form>
+      </div>
+    </header>
+    <!-- Big screens -->
+    <header class="header position-relative d-none d-lg-block">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <ul class="list-unstyled pt-3 d-flex align-items-center justify-content-between">
+              <li class="header__link-list-active"><a class="header__link header__link-active" href="#">Overview</a>
+              </li>
+              <li><a class="header__link" href="#">Campaigns</a></li>
+              <li><a class="header__link" href="#">Reviews</a></li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <form class="header-form position-relative ml-auto">
+              <input class="header-form__input form-control px-3 py-2" type="text" placeholder="Search payment history">
+              <div class="header-form__icon position-absolute">
+                <img src="./assets/images/search icon.svg" alt="">
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3">
+            <div class="d-flex justify-content-end align-items-center">
+              <img class="img-fluid profile-picture pr-2" src="./assets/images/profile picture.png" alt="">
+              <div class="dropdown show">
+                <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  John Kelvin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#">Edit Profile</a>
+                  <a class="dropdown-item" href="#">Sign out</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="container">
+      <!-- plug your content here -->
+
+
+      <!-- Top Section starts Here -->
+      <section class="top-section">
+
+        <div class="pd-head container">
+          <h3 class="pd-h3">Tasks Overview</h3>
+          <p class="pd-p">
+            <span class="available"> Available Balance:</span>
+            <span class="balance">N250,000</span>
+          </p>
+        </div>
+
+        <!-- Top Section Cards -->
+        <div class="pd-cards">
+          <div class="container pd-cards-container">
+            <div class="card-deck">
+
+              <!-- Top Section Card 1 -->
+              <div class="card pd-card col-md-12">
+
+                <div class="card-text">
+                  <h5 class="card-title feature-card-title">CocaCola Tasks Overview</h5>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Start Date:</span>
+                      <span class="second second-top">June 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">End Date:</span>
+                      <span class="second second-top">August 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Impressions:</span>
+                      <span class="second orange">2,347.444</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Targeted Impressions:</span>
+                      <span class="second second-last orange">4,000,000</span>
+                    </div>
+                  </p>
+
+                  <div class="container-flex inner-container">
+                    <div class="card-group">
+                      <div class="card percentage-card">
+                        <canvas id="pieChart1" class="piechart top-piechart"></canvas>
+                        <!-- <img class="percentage-image" src="./assets/images/Group 25.png" alt="percentage"> -->
+                      </div>
+
+                      <div class="card percentage-card mobile-card">
+                        <p class="progress">
+                          <span class="percentage">64%</span>
+                          <span class="complete">Complete</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Top Section card 2 -->
+              <div class="card pd-card col-md-12 mobile-hide">
+
+                <div class="card-text">
+                  <h5 class="card-title feature-card-title">Hotels.ng Tasks Overview</h5>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Start Date:</span>
+                      <span class="second second-top">June 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">End Date:</span>
+                      <span class="second second-top">August 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Impressions:</span>
+                      <span class="second orange">2,347.444</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Targeted Impressions:</span>
+                      <span class="second second-last orange">4,000,000</span>
+                    </div>
+                  </p>
+
+                  <div class="container-flex inner-container">
+                    <div class="card-group">
+                      <div class="card percentage-card">
+                        <canvas id="pieChart2" class="piechart top-piechart"></canvas>
+                        <!-- <img class="percentage-image" src="./assets/images/Group 25.png" alt="percentage"> -->
+                      </div>
+
+                      <div class="card percentage-card mobile-card">
+                        <p class="progress">
+                          <span class="percentage">64%</span>
+                          <span class="complete">Complete</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Top section Card 3 -->
+              <div class="card pd-card col-md-12 mobile-hide">
+
+                <div class="card-text">
+                  <h5 class="card-title feature-card-title">Hotels.ng Tasks Overview</h5>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Start Date:</span>
+                      <span class="second second-top">June 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">End Date:</span>
+                      <span class="second second-top">August 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Impressions:</span>
+                      <span class="second orange">2,347.444</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Targeted Impressions:</span>
+                      <span class="second second-last orange">4,000,000</span>
+                    </div>
+                  </p>
+
+                  <div class="container-flex inner-container">
+                    <div class="card-group">
+                      <div class="card percentage-card">
+                        <canvas id="pieChart2" class="piechart top-piechart"></canvas>
+                        <!-- <img class="percentage-image" src="./assets/images/Group 25.png" alt="percentage"> -->
+                      </div>
+
+                      <div class="card percentage-card mobile-card">
+                        <p class="progress">
+                          <span class="percentage">64%</span>
+                          <span class="complete">Complete</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="slider">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#" class="blue"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+          </div>
+        </div>
+
+      </section>
+      <!-- End of Top Section -->
+
+      <!-- Chart Section starts Here -->
+      <section class="chart-section">
+        <div class="container chart-container">
+          <h5 class="task-insight pd-h3">Task Insights</h5>
+
+          <div class="chart-dropdowns">
+            <a href="#" class="chart-btn chart-btn-1">Task
+              <span class="drop-icon"> <i class="fas fa-chevron-down down-icon-1"></i></span>
+            </a>
+            <a href="#" class="chart-btn chart-btn-2 mobile-hide">Days of the week
+              <span class="drop-icon"><i class="fas fa-chevron-down down-icon-2"></i></span>
+            </a>
+            <a href="#" class="chart-btn chart-btn-3">Engagements
+              <span class="drop-icon"><i class="fas fa-chevron-down down-icon-3"></i></span>
+            </a>
+          </div>
+
+          <hr>
+
+          <canvas id="myChart"></canvas>
+
+          <div class="chart-bottom">
+            <div class="post-engagements-div">
+              <a href="#" class="post-circle"></a>
+              <p class="post-engagements-p">
+                <span class="mobile-hide">Post</span>Engagements</p>
+            </div>
+
+            <div class="chart-date">
+              <i class="fas fa-chevron-left left-chart-icon"></i>
+              <p class="date"> Jul 10 - Jul 22, 2020 </p>
+              <i class="fas fa-chevron-right right-chart-icon"></i>
+            </div>
+
+            <div class="export-data">
+              <a href="#" class="export-data-link arrival-btn arrival-btn-3">
+                <span class="data-link-icon">
+                  <i class="fas fa-download"></i>
+                </span>
+                Export Data
+              </a>
+            </div>
+          </div>
+
+          <!-- <img src="./assets/images/Group 38.png" alt="chart" class="chart-image"> -->
+          <!-- <div id='polynomial2_div' class="container-fluid mt-3 mb-4 chart"></div> -->
+        </div>
+      </section>
+      <!-- Chart Section Ends Here -->
+
+
+      <!-- New Arrivals Section starts Here -->
+      <section class="new-arrival-section">
+        <div class="pd-cards">
+          <div class="container pd-cards-container">
+            <div class="new-arrival-text">
+              <h3 class="new-arrival pd-h3">New Arrivals</h3>
+
+              <div class="ancor-container">
+                <a href="#" class="arrival-btn arrival-btn-1">categories
+                  <span class="drop-icon"> <i class="fas fa-chevron-down category-icon"></i></span>
+                </a>
+                <a href="#" class="arrival-btn arrival-btn-2">Service option
+                  <span class="drop-icon"><i class="fas fa-chevron-down service-icon"></i></span>
+                </a>
+                <i class="fas fa-sliders-h  toggle fa-1x arrival-toggle-icon"></i>
+              </div>
+            </div>
+
+            <div class="card-deck">
+
+              <!-- New Feature Card 1 -->
+              <div class="card pd-card">
+
+                <div class="card-text">
+                  <h5 class="card-title feature-card-title">Star Lager Tasks</h5>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Start Date:</span>
+                      <span class="second second-top">June 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">End Date:</span>
+                      <span class="second second-top">August 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Impressions:</span>
+                      <span class="second second-top">2,347.444</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Targeted Impressions:</span>
+                      <span class="second second-top">4,000,000</span>
+                    </div>
+                  </p>
+
+                  <div class="container-flex inner-container">
+                    <div class="card-group">
+                      <div class="card percentage-card">
+                        <canvas id="pieChart4" class="piechart bottom-piechart"></canvas>
+                        <!-- <img class="percentage-image bottom-image" src="./assets/images/Group 25 ord.png"
+                          alt="percentage"> -->
+                      </div>
+
+                      <div class="card percentage-card">
+                        <a href="#" class="card-btn">Start</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- New Feature card 2 -->
+              <div class="card pd-card mobile-hide">
+
+                <div class="card-text">
+                  <h5 class="card-title feature-card-title">NNPC Tasks</h5>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Start Date:</span>
+                      <span class="second second-top">June 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">End Date:</span>
+                      <span class="second second-top">August 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Impressions:</span>
+                      <span class="second second-top">2,347.444</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Targeted Impressions:</span>
+                      <span class="second second-top">4,000,000</span>
+                    </div>
+                  </p>
+
+                  <div class="container-flex inner-container">
+                    <div class="card-group">
+                      <div class="card percentage-card">
+                        <canvas id="pieChart5" class="piechart bottom-piechart"></canvas>
+                        <!-- <img class="percentage-image bottom-image" src="./assets/images/Group 25 ord.png"
+                          alt="percentage"> -->
+                      </div>
+
+                      <div class="card percentage-card">
+                        <a href="#" class="card-btn">Start</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- New Feature Card 3 -->
+              <div class="card pd-card mobile-hide">
+
+                <div class="card-text">
+                  <h5 class="card-title feature-card-title">MTN Tasks</h5>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Start Date:</span>
+                      <span class="second second-top">June 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">End Date:</span>
+                      <span class="second second-top">August 10,2020</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Impressions:</span>
+                      <span class="second second-top">2,347.444</span>
+                    </div>
+                  </p>
+
+                  <p class="card-text feature-card-text">
+                    <div class="container">
+                      <span class="first">Targeted Impressions:</span>
+                      <span class="second second-top">4,000,000</span>
+                    </div>
+                  </p>
+
+                  <div class="container-flex inner-container">
+                    <div class="card-group">
+                      <div class="card percentage-card">
+                        <canvas id="pieChart6" class="piechart bottom-piechart"></canvas>
+                        <!-- <img class="percentage-image bottom-image" src="./assets/images/Group 25 ord.png"
+                          alt="percentage"> -->
+                      </div>
+
+                      <div class="card percentage-card">
+                        <a href="#" class="card-btn">Start</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="slider">
+            <a href="#"></a>
+            <a href="#" class="blue"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+          </div>
+        </div>
+      </section>
+      <!-- New Arrival Section Ends Here -->
+
+    </section>
+  </main>
+
+
+  <script src="./assets/js/chart.js"></script>
+  <script src="./assets/js/jquery.js"></script>
+  <script src="./assets/js/popper.js"></script>
+  <script src="./assets/js/bootstrap.js"></script>
+</body>
+
+</html>
